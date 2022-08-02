@@ -4,6 +4,7 @@ emoji: "️🎛️️"
 type: "tech"
 topics: ["react", "typescript", "webaudioapi"]
 published: true
+published_at: "2020-12-11"
 ---
 
 ![](https://storage.googleapis.com/zenn-user-upload/z90kktb21izef6nq5ylpz2jpxu5m)
