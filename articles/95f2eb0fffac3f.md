@@ -20,25 +20,24 @@ https://fono.app
 
 ## 機能
 
-* 複数ファイルのインポート、結合
-* フェード
-* クリップごとの音量調整
-* クリップの分割・長さの調整
-* コンプレッサー
-* EQ
-* リバーブ
-* VUメーター
-* wavファイルでのエクスポート
-
+- 複数ファイルのインポート、結合
+- フェード
+- クリップごとの音量調整
+- クリップの分割・長さの調整
+- コンプレッサー
+- EQ
+- リバーブ
+- VUメーター
+- wavファイルでのエクスポート
 
 ## 技術スタック
 
-* Typescript
-* React
-* styled-components
-* zustand
-* Tone.js
-* Netlify
+- Typescript
+- React
+- styled-components
+- zustand
+- Tone.js
+- Netlify
 
 Reactとかstyled-componentsについて言うことは特に無いので、zustandとTone.jsのみ所感を書きます。
 
@@ -46,10 +45,10 @@ Reactとかstyled-componentsについて言うことは特に無いので、zust
 
 [zustand](https://github.com/pmndrs/zustand) はreduxのような状態管理ライブラリです。ただreduxと比べて以下のような特徴があります。
 
-* fluxアーキテクチャのような縛りがなく、ボイラープレートコードが少ない。
-* ストアはただのグローバルオブジェクトみたいなイメージで、なんでも放り込める（それが良いかは別として）。
-* selectorはredux同様で柔軟に書ける。
-* Providerで囲む必要がない。
+- fluxアーキテクチャのような縛りがなく、ボイラープレートコードが少ない。
+- ストアはただのグローバルオブジェクトみたいなイメージで、なんでも放り込める（それが良いかは別として）。
+- selectorはredux同様で柔軟に書ける。
+- Providerで囲む必要がない。
 
 シンプルに、サクッとグローバルステートを管理するぶんにはかなり便利に感じます。それでいてselectorや購読を使いこなせばパフォーマンスチューニングもしっかりできる。
 
