@@ -3,5 +3,10 @@
     "no-bare-urls": false,
     "single-h1": false,
     "fenced-code-language": false
+  },
+  "diffEditor.wordWrap": "off",
+  "editor.wordWrap": "wordWrapColumn",
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn"
   }
 }

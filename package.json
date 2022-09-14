@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "new:article": "zenn new:article && preview",
+    "new:book": "zenn new:book",
+    "preview": "zenn preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "zenn-cli": "^0.1.115"
+    "zenn-cli": "^0.1.125"
   },
   "devDependencies": {
     "prettier": "^2.7.1",
