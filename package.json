@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "new:article": "zenn new:article && preview",
+    "new:article": "zenn new:article && zenn preview",
     "new:book": "zenn new:book",
     "preview": "zenn preview"
   },
@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "zenn-cli": "^0.1.125"
+    "zenn-cli": "^0.1.137"
   },
   "devDependencies": {
     "prettier": "^2.7.1",
