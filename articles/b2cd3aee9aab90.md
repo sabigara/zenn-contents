@@ -3,7 +3,7 @@ title: "Denoでfaviconに必要なファイルを自動生成するCLIを作っ�
 emoji: "🌟"
 type: "tech"
 topics: ["deno", "typescript"]
-published: false
+published: true
 ---
 
 ## 成果
@@ -118,7 +118,7 @@ Nodeでも[tsx](https://github.com/esbuild-kit/tsx)などを使えばtsファイ
 
 npm向けの `package.json` の設定は非常に込み入っていてうんざりさせられますが、Denoのモジュールの公開はシンプルかつ簡単にできました。`main` と `module` と `exports` と `types` と `typesVersions` を設定する必要はありません。
 
-[deno.land](https://deno.land)への[公開](https://deno.land/add_module)も簡単だし、バージョニングが必要なければ[github.com](https://github.com)からインポートしても完全に正しいです。
+[deno.landへの公開](https://deno.land/add_module)も簡単だし、バージョニングが必要なければ[github.com](https://github.com)からインポートしても完全に正しいです。
 
 ただ、この辺のシンプルさゆえにimport文にURLをすべて記述しないといけなかったりするので、npmから雑にダウンロードするのと比べると若干摩擦を感じる気もします（[It seems unwieldy to import URLs everywhere](https://deno.land/manual@v1.30.2/basics/modules#it-seems-unwieldy-to-import-urls-everywhere)で紹介されてるワークフローもどうなんだ？と思う）。
 
@@ -130,4 +130,5 @@ npm向けの `package.json` の設定は非常に込み入っていてうんざ�
 
 ## まとめ
 
-Deno初心者なので間違ってる部分があったら優しく教えてください。
+- Deno初心者なので間違ってる部分があったら優しく教えてください。
+- [個人ブログ](https://rubiq.vercel.app)もやっているのでよければ読んでください。
