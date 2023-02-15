@@ -19,7 +19,7 @@ deno run --unstable --allow-read --allow-write --allow-ffi \
 
 ## これは何か
 
-1枚のsvgまたはpngファイルからfavicon用のファイル群を自動生成してくれるCLIツールです。
+1 枚の svg または png ファイルから favicon 用のファイル群を自動生成してくれる CLI ツールです。
 
 どんなファイルをどんな形式で用意するのが正解なのかは正直よくわかっていない（し考えたくない）ので、この記事を参考にしました。
 
@@ -37,8 +37,8 @@ https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-mo
 
 ## モチベーション
 
-- Webサービスやサイトを作るたびにfaviconを用意するのが面倒だったので
-- Denoを使ってみたかったので
+- Web サービスやサイトを作るたびに favicon を用意するのが面倒だったので
+- Deno を使ってみたかったので
 - 本業が煮詰まっていたので
 
 ## 使ったライブラリ
@@ -50,7 +50,7 @@ https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-mo
 ## 実装方法
 
 - `cliffy` でコマンドラインオプションを処理する。
-- （入力がsvgだった場合） `resvg` でpngとしてレンダリングする。
+- （入力が svg だった場合） `resvg` で png としてレンダリングする。
 - `imagemagick-deno` でリサイズしたり、余白を足したり（`apple-touch-icon`）、フォーマットを変換し（`favicon.icon`）たりする。
 - ファイルを出力する。
 
@@ -94,41 +94,41 @@ await new Command()
 
 ### resvg-js
 
-入力としてsvgを使いたかったので導入しました。APIはシンプルだしドキュメント通りに動いてくれたので特に書くことはありません（それ以上にありがたいことはない）。
+入力として svg を使いたかったので導入しました。API はシンプルだしドキュメント通りに動いてくれたので特に書くことはありません（それ以上にありがたいことはない）。
 
 ### imagemagick-deno
 
-[ImageMagick](https://imagemagick.org/index.php)の[wasm版](https://github.com/dlemstra/magick-wasm)をdenoで動かせるようにしたものという認識です。
+[ImageMagick](https://imagemagick.org/index.php)の[wasm 版](https://github.com/dlemstra/magick-wasm)を deno で動かせるようにしたものという認識です。
 
-リサイズ・alphaの除去・`ico` への変換（という表現は正しい？）など一通りできるのですが、コールバックベースのAPIはやっぱり使いにくいです。しかし `Promise` でラップしようとしたらなぜか動かなかったのでがんばってそのまま実装しました（wasmの制限？）。
+リサイズ・alpha の除去・`ico` への変換（という表現は正しい？）など一通りできるのですが、コールバックベースの API はやっぱり使いにくいです。しかし `Promise` でラップしようとしたらなぜか動かなかったのでがんばってそのまま実装しました（wasm の制限？）。
 
-代替として[ImageScript](https://github.com/matmen/ImageScript)も試してみました。より使いやすいAPIで画像処理ができそうでしたが、自分の環境ではリサイズ時にガビガビになってしまったため採用は断念しました。僕の使い方が間違っている可能性もあります。
+代替として[ImageScript](https://github.com/matmen/ImageScript)も試してみました。より使いやすい API で画像処理ができそうでしたが、自分の環境ではリサイズ時にガビガビになってしまったため採用は断念しました。僕の使い方が間違っている可能性もあります。
 
-## Denoの感想
+## Deno の感想
 
-これだけ小さいツールでは判断できないことも多いですが、Denoを使った感想も書いておきます。
+これだけ小さいツールでは判断できないことも多いですが、Deno を使った感想も書いておきます。
 
 ### 初速が速い
 
-TypeScriptやリンターなどのツール周りの設定をしなくてもいいので、**コードを書き始めるまでが速い**のはいいことだと思います。「JavaScriptはどこでも動く」は本来強みであるはずなのに、ツールチェインの複雑さのせいで逆に障害になっている感があります。Web標準へ準拠する姿勢なのもそういう意味ではいいのではないでしょうか。
+TypeScript やリンターなどのツール周りの設定をしなくてもいいので、**コードを書き始めるまでが速い**のはいいことだと思います。「JavaScript はどこでも動く」は本来強みであるはずなのに、ツールチェインの複雑さのせいで逆に障害になっている感があります。Web 標準へ準拠する姿勢なのもそういう意味ではいいのではないでしょうか。
 
-Nodeでも[tsx](https://github.com/esbuild-kit/tsx)などを使えばtsファイルを直接実行（？）できますが、ランタイム側でサポートしてくれているのはありがたいです。
+Node でも[tsx](https://github.com/esbuild-kit/tsx)などを使えば ts ファイルを直接実行（？）できますが、ランタイム側でサポートしてくれているのはありがたいです。
 
 ### 公開が簡単
 
-npm向けの `package.json` の設定は非常に込み入っていてうんざりさせられますが、Denoのモジュールの公開はシンプルかつ簡単にできました。`main` と `module` と `exports` と `types` と `typesVersions` を設定する必要はありません。
+npm 向けの `package.json` の設定は非常に込み入っていてうんざりさせられますが、Deno のモジュールの公開はシンプルかつ簡単にできました。`main` と `module` と `exports` と `types` と `typesVersions` を設定する必要はありません。
 
-[deno.landへの公開](https://deno.land/add_module)も簡単だし、バージョニングが必要なければ[github.com](https://github.com)からインポートしても完全に正しいです。
+[deno.land への公開](https://deno.land/add_module)も簡単だし、バージョニングが必要なければ[github.com](https://github.com)からインポートしても完全に正しいです。
 
-ただ、この辺のシンプルさゆえにimport文にURLをすべて記述しないといけなかったりするので、npmから雑にダウンロードするのと比べると若干摩擦を感じる気もします（[It seems unwieldy to import URLs everywhere](https://deno.land/manual@v1.30.2/basics/modules#it-seems-unwieldy-to-import-urls-everywhere)で紹介されてるワークフローもどうなんだ？と思う）。
+ただ、この辺のシンプルさゆえに import 文に URL をすべて記述しないといけなかったりするので、npm から雑にダウンロードするのと比べると若干摩擦を感じる気もします（[It seems unwieldy to import URLs everywhere](https://deno.land/manual@v1.30.2/basics/modules#it-seems-unwieldy-to-import-urls-everywhere)で紹介されてるワークフローもどうなんだ？と思う）。
 
 ## TODO
 
-- 画像・svgの最適化？
-- Web版？
-- Node版？
+- 画像・svg の最適化？
+- Web 版？
+- Node 版？
 
 ## まとめ
 
-- Deno初心者なので間違ってる部分があったら優しく教えてください。
+- Deno 初心者なので間違ってる部分があったら優しく教えてください。
 - [個人ブログ](https://rubiq.vercel.app)もやっているのでよければ読んでください。
