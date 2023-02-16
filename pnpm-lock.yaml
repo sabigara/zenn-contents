@@ -5,7 +5,7 @@ specifiers:
   zenn-cli: ^0.1.139
 
 dependencies:
-  zenn-cli: 0.1.139
+  zenn-cli: 0.1.140
 
 devDependencies:
   prettier: 2.8.4
@@ -18,8 +18,8 @@ packages:
     hasBin: true
     dev: true
 
-  /zenn-cli/0.1.139:
-    resolution: {integrity: sha512-bjiwnX4rqg2CgCjDDhTtoQyoD+VJBJhW+SqhxN/B6zP0W5yZdT6asEntRVcsm8u9eloV1sgCt1OazORsv1YtYg==}
+  /zenn-cli/0.1.140:
+    resolution: {integrity: sha512-fcMxd5DHeZeaVkeD1qUoKOgE3gNf1E8+Yh8Kb4hCVIiiwuPR4SOI0uCcno7aeD6LH7OSSymzn0clEdx/QrUhlQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dev: false
