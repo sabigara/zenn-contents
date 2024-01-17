@@ -12,9 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "zenn-cli": "^0.1.139"
+    "zenn-cli": "^0.1.151"
   },
   "devDependencies": {
-    "prettier": "^2.7.1"
+    "prettier": "^3.2.3"
   }
 }
